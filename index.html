@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 7 - Forms</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/normalize.css">
+  <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+  <div id="root" class="wrapper">
+    <div class="container">
+      <form novalidate id="form" class="form wrapper__form">
+        <h1 class="form__title">Вход</h1>
+        <div class="field">
+          <label for="email-input" class="field__label">Email</label>
+          <input
+            type="email"
+            placeholder="Введите email"
+            name="email"
+            autocomplete="off"
+            required
+            id="email-input"
+            class="field__control"
+          />
+          <div id="email-error" class="error"></div>
+        </div>
+        <div class="field">
+          <label for="password-input" class="field__label">Пароль</label>
+          <input
+            type="password"
+            placeholder="Введите пароль"
+            name="password"
+            autocomplete="off"
+            required
+            id="password-input"
+            class="field__control"
+          />
+          <div id="password-error" class="error"></div>
+        </div>
+        <div class="checkbox form__checkbox">
+          <label for="checkbox-input" id="checkbox-label" class="checkbox__label">
+            <input type="checkbox" id="checkbox-input" class="checkbox__control">
+            <span class="checkbox__emulator"></span>
+            Я согласен получать обновления на почту
+          </label>
+          <div id="checkbox-error" class="error">Поле обязательно для заполнения</div>
+        </div>
+        <button type="submit" id="log-in-button" class="button form__button">Войти</button>
+      </form>
+    </div>
+  </div>
+  <script src="./js/main.js"></script>
+</body>
+</html>
