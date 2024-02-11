@@ -16,7 +16,7 @@ arr.forEach(value => {
 });
 console.log('');
 
-function func(str) {
+function formatStr(str) {
   if (typeof str !== 'string') {
     console.log('В качестве аргумента передана не строка');
     return;
@@ -31,4 +31,4 @@ function func(str) {
   console.log(str);
 }
 
-func('   17579401754637945867878385945890385   ');
+formatStr('   17579401754637945867878385945890385   ');
