@@ -13,7 +13,7 @@ const books = document.querySelectorAll('.book');
 }(books));
 
 const body = document.querySelector('body');
-body.style.backgroundImage = 'url(./image/you-dont-know-js.jpg)';
+body.style.backgroundImage = 'url(./images/you-dont-know-js.jpg)';
 
 books[2].childNodes[1].childNodes[1].innerText = 'Книга 3. this и Прототипы Объектов';
 
