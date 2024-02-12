@@ -14,41 +14,54 @@ function validateEmail(email) {
 form.onsubmit = function() {
   const email = emailInput.value;
   const password = passwordInput.value;
+  let isErrorEmail;
+  let isErrorPassword;
+  let isErrorCheckbox;
 
   if (email === '') {
     emailError.textContent = 'Поле обязательно для заполнения';
     emailInput.classList.add('field__control--error');
+    isErrorEmail = true;
   } else if (!validateEmail(email)) {
     emailError.textContent = 'Email невалидный';
     emailInput.classList.add('field__control--error');
-  } else { emailInput.classList.remove('field__control--error'); }
+    isErrorEmail = true;
+  } else {
+    emailInput.classList.remove('field__control--error');
+    isErrorEmail = false;
+  }
 
   if (password === '') {
     passwordError.textContent = 'Поле обязательно для заполнения';
     passwordInput.classList.add('field__control--error');
+    isErrorPassword = true;
   } else if (password.length < 8) {
     passwordError.textContent = 'Пароль должен содержать как минимум 8 символов';
     passwordInput.classList.add('field__control--error');
-  } else { passwordInput.classList.remove('field__control--error'); }
+    isErrorPassword = true;
+  } else {
+    passwordInput.classList.remove('field__control--error');
+    isErrorPassword = false;
+  }
 
   if (!checkboxInput.checked) {
     checkboxLabel.classList.add('checkbox__label--error');
-  } else { checkboxLabel.classList.remove('checkbox__label--error'); }
+    isErrorCheckbox = true;
+  } else {
+    checkboxLabel.classList.remove('checkbox__label--error');
+    isErrorCheckbox = false;
+  }
 
-  if (
-    emailInput.classList.contains('field__control--error') ||
-    passwordInput.classList.contains('field__control--error') ||
-    checkboxLabel.classList.contains('checkbox__label--error')
-  ) {
+  if (isErrorEmail || isErrorPassword || isErrorCheckbox) {
     return false;
   }
-  
+
   const obj = {
     email: email,
     password: password,
-  }
-  
+  };
+
   console.log(obj);
-  
+
   return false;
 };
